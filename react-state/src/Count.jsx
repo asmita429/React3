@@ -4,13 +4,17 @@ export default function Count() {
   // Rendering starts from here to bottom of return statement.
   // initialization
   let [count, setCount] = useState(0);
-  console.log("Componnet is rendered! ");
-  console.log(`count = ${count}`);
 
   let incCount = () => {
-    // function calling stage, first step, after this stage rendering stars
-    setCount(count + 1);
-    console.log(`inside incCount, count = ${count}`);
+    // function calling stage, first step, after this stage rendering starts
+
+    // callback in updater function, increment by 2+2 = 4
+    setCount((currentCount) => {
+      return currentCount + 2;
+    });
+    setCount((currentCount) => {
+      return currentCount + 2;
+    });
   };
 
   return (
