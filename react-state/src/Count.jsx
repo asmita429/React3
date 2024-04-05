@@ -4,17 +4,13 @@ export default function Count() {
   // Rendering starts from here to bottom of return statement.
   // initialization
   let [count, setCount] = useState(0);
+  //   gets printed 3times then stops
+  console.log("re-rendered!");
 
   let incCount = () => {
     // function calling stage, first step, after this stage rendering starts
-
-    // callback in updater function, increment by 2+2 = 4
-    setCount((currentCount) => {
-      return currentCount + 2;
-    });
-    setCount((currentCount) => {
-      return currentCount + 2;
-    });
+    // react stops re-rendering when it finds there is no change in state variable's value
+    setCount(13);
   };
 
   return (
