@@ -6,7 +6,7 @@ function App() {
   return (
     <>
       <h3>States in react</h3>
-      <LikeBtn />
+      <Count />
     </>
   );
 }
