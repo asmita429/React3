@@ -1,16 +1,19 @@
 import { useState } from "react";
-
+function init() {
+  console.log("normal function");
+  return Math.floor(Math.random() * 5);
+}
 export default function Count() {
-  // Rendering starts from here to bottom of return statement.
-  // initialization
-  let [count, setCount] = useState(0);
-  //   gets printed 3times then stops
-  console.log("re-rendered!");
+  // initialization using normal function, do not invoke fun here
+  let [count, setCount] = useState(init);
 
   let incCount = () => {
-    // function calling stage, first step, after this stage rendering starts
-    // react stops re-rendering when it finds there is no change in state variable's value
-    setCount(13);
+    setCount((currValue) => {
+      return currValue + 1;
+    });
+    setCount((currValue) => {
+      return currValue + 1;
+    });
   };
 
   return (
